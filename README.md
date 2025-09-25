@@ -23,11 +23,9 @@ python app.py <path_to_imdb-export.csv> <optional: (--print or --only-print) (nu
 
 It takes the CSV file of your IMDb ratings as a required argument and an optional flag: `--print` which makes it so the program nicely displays the data on the command line or `--only-print` which does the same, but keeps the app from generating the JSON file.
 
-Both flags also accept a number after them, to limit the amount of printed lines - if nothing is given it will print all.
+Both flags also accept a number after them, to limit the amount of printed lines - if nothing is given it will print all. _The default ordering is by most movies rated, use the web visualizer for more options._
 
-_The default ordering is by most movies rated, use the web visualizer for more options._
-
-If not set as `--only-print`, this will generate a JSON file containing a list of your favorite directors: `favorite_directors.json` which can be used as input on the visualizer website.
+If not set as `--only-print`, the app will generate a JSON file containing a list of your favorite directors: `favorite_directors.json` which can be used as input on the visualizer website.
 
 _The generated list only takes into account directors who you have rated at least 3 titles from._
 
