@@ -17,15 +17,15 @@ When the export is complete, you'll be able to download it as a file named somet
 ### 2. Clone this repository and run the app
 Standard github cloning, to run the program you'll need to have [Python](https://www.python.org/downloads/) installed.
 
+```
+python app.py <path_to_imdb-export.csv> <optional: (--print or --only-print) (number_of_lines)>
+```
+
 It takes the CSV file of your IMDb ratings as a required argument and an optional flag: `--print` which makes it so the program nicely displays the data on the command line or `--only-print` which does the same, but keeps the app from generating the JSON file.
 
 Both flags also accept a number after them, to limit the amount of printed lines - if nothing is given it will print all.
 
 _The default ordering is by most movies rated, use the web visualizer for more options._
-
-```
-python app.py <path_to_imdb-export.csv> <optional: (--print or --only-print) (number_of_lines)>
-```
 
 If not set as `--only-print`, this will generate a JSON file containing a list of your favorite directors: `favorite_directors.json` which can be used as input on the visualizer website.
 
