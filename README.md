@@ -1,20 +1,17 @@
 # Favorite Directors
 A Python app for parsing IMDb ratings csv and generating a favorite director list, based on number of movies watched and average rating.
 
-_This is the backend counterpart to [favorite-directors-visualizer](https://github.com/nhmosko/favorite-directors-visualizer)_
+_This is the backend counterpart to [favorite-directors-visualizer](https://github.com/nhmosko/favorite-directors-visualizer)._
 
 
-## How it works:
-### 1. Export your IMDb ratings
-Log in to imdb.com and navigate to your ratings page, then click on the export button on the top right corner (the export may take some time to complete).
+## 1. Export your IMDb ratings
+Log in to [IMDb](https://imdb.com) and navigate to your ratings page, then click on the export button on the top right corner (the export may take some time to complete).
 
 ![imdb ratings page with circled export button](images/imdb-export.png)
 
 When the export is complete, you'll be able to download it as a file named something like e342343c(...).csv.
 
-
-
-### 2. Clone this repository and run the app
+## 2. Clone this repository and run the app
 Standard github cloning, to run the program you'll need to have [Python](https://www.python.org/downloads/) installed.
 
 ```
@@ -29,9 +26,9 @@ If not set as `--only-print`, the app will generate a JSON file containing a lis
 
 _The generated list only takes into account directors who you have rated at least 3 titles from._
 
-
-
-### 3. Go to [nhmosko.github.io/favorite-directors-visualizer](https://nhmosko.github.io/favorite-directors-visualizer) _!!! not yet implemented_
+## 3. Go to [nhmosko.github.io/favorite-directors-visualizer](https://nhmosko.github.io/favorite-directors-visualizer) _!!! not yet implemented_
 There you can interact with your data, change filters, play with parameters and create graphs.
 
 
+-----------------------
+*_Disclaimer: It doesn't work with Letterboxd exports, because their format does not include the name of the directors._
