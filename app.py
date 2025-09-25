@@ -1,6 +1,7 @@
 import sys
 import csv 
 import sqlite3
+import json
 
 def main():
     if len(sys.argv) < 2:
@@ -44,8 +45,8 @@ def main():
 
     if flag != 2: #--only-print
         data_json = tuples_to_json(data)
-        with open("favorite-directors.json", "w") as f:
-            f.write(str(data_json))
+        with open("favorite-directors.json", "w", encoding="utf-8") as f:
+            json.dump(data_json, f, ensure_ascii=False, indent=4)
 
     if flag != 0: #none 
         for i in range(len(data)):
@@ -132,9 +133,9 @@ def tuples_to_json(tuple_list):
     for row in tuple_list:
         json.append(
                 {
-                    'director_name': row[0],
-                    'movie_count': row[1],
-                    'avg_rating': row[2]
+                    "director_name": row[0],
+                    "movie_count": row[1],
+                    "avg_rating": row[2]
                 }
             )
     return json
