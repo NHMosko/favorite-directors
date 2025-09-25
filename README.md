@@ -13,6 +13,7 @@ Log in to imdb.com and navigate to your ratings page, then click on the export b
 When the export is complete, you'll be able to download it as a file named something like e342343c(...).csv.
 
 
+
 ### 2. Clone this repository and run the app
 Standard github cloning, to run the program you'll need to have [Python](https://www.python.org/downloads/) installed.
 
@@ -29,6 +30,8 @@ python app.py <path_to_imdb-export.csv> <optional: (--print or --only-print) (nu
 If not set as `--only-print`, this will generate a JSON file containing a list of your favorite directors: `favorite_directors.json` which can be used as input on the visualizer website.
 
 _The generated list only takes into account directors who you have rated at least 3 titles from._
+
+
 
 ### 3. Go to [nhmosko.github.io/favorite-directors-visualizer](https://nhmosko.github.io/favorite-directors-visualizer) _!!! not yet implemented_
 There you can interact with your data, change filters, play with parameters and create graphs.
