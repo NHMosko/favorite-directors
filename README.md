@@ -21,7 +21,7 @@ It takes the CSV file of your IMDb ratings as a required argument and an optiona
 
 Both flags also accept a number after them, to limit the amount of printed lines - if nothing is given it will print all.
 
-The default ordering is by most movies rated, use the web visualizer for more options.
+_The default ordering is by most movies rated, use the web visualizer for more options._
 
 ```
 python app.py <path_to_imdb-export.csv> <optional: (--print or --only-print) (number_of_lines)>
