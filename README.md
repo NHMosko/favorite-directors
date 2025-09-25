@@ -26,7 +26,7 @@ If not set as `--only-print`, the app will generate a JSON file containing a lis
 
 _The generated list only takes into account directors who you have rated at least 3 titles from._
 
-## 3. Go to [nhmosko.github.io/favorite-directors-visualizer](https://nhmosko.github.io/favorite-directors-visualizer) _!!! not yet implemented_
+## 3. Go to [nhmosko.github.io/favorite-directors-visualizer](https://nhmosko.github.io/favorite-directors-visualizer) 
 There you can interact with your data, change filters, play with parameters and create graphs.
 
 
