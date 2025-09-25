@@ -23,7 +23,7 @@ Both flags also accept a number after them, to limit the amount of printed lines
 The default ordering is by most movies rated, use the web visualizer for more options.
 
 ```
-python <path_to_app.py> <path_to_imdb-export.csv> <optional: (--print or --only-print) (number_of_lines)>
+python app.py <path_to_imdb-export.csv> <optional: (--print or --only-print) (number_of_lines)>
 ```
 
 If not set as `--only-print`, this will generate a JSON file containing a list of your favorite directors: `favorite_directors.json` which can be used as input on the visualizer website.
