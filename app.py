@@ -6,19 +6,61 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python app.py <imdb_csv_file>")
         return
-    
+
+    flag = 0 #none
+    max_lines = -1 #default
+
+    if len(sys.argv) > 2:
+        if sys.argv[2] == "--print":
+            flag = 1 
+        elif sys.argv[2] == "--only-print":
+            flag = 2
+        else:
+            print("Invalid flag. Options --print --only-print\nUsage: python app.py <imdb_csv_file> --flag")
+            return
+        if len(sys.argv) > 3 and isinstance(int(sys.argv[3]), int):
+            if int(sys.argv[3]) <= 0:
+                flag = 0
+            else:
+                max_lines = int(sys.argv[3])
+
+
+
+ 
     file_input = sys.argv[1]
     
+    if not file_input.endswith(".csv"):
+        print("Invalid file format, needs to be csv.\nUsage: python app.py <imdb_csv_file>")
+        return
+
     db = sqlite3.connect("movies.db")
     cur = db.cursor()
 
-    create_table(cur, db, file_input)
+    create_table(file_input, db, cur)
     data = analyze_results(cur)
 
     db.close()
+    
+
+    if flag != 2: #--only-print
+        data_json = tuples_to_json(data)
+        with open("favorite-directors.json", "w") as f:
+            f.write(str(data_json))
+
+    if flag != 0: #none 
+        for i in range(len(data)):
+            if i > max_lines and max_lines > 0:
+                break
+
+            row = data[i]
+            if row[1] > 9:
+                print(row[1], "movies with the average rating of", row[2], "  ----  ", row[0])
+            else:
+                print("", row[1], "movies with the average rating of", row[2], "  ----  ", row[0])
 
 
-def create_table(cur, db, file_input):
+
+def create_table(file_input, db, cur):
     cur.execute("""
     CREATE TABLE IF NOT EXISTS imdb (
         Const TEXT,
@@ -81,14 +123,21 @@ def analyze_results(cur):
 
     rows = cur.fetchall()
     #list of tuples: (director name, movie count, avg grade)
+    
+
     return rows
 
-    # for row in rows:
-    #     #print(row)
-    #     if row[1] > 9:
-    #         print(row[1], "movies with the average rating of", row[2], "  ----  ", row[0])
-    #     else:
-    #         print("", row[1], "movies with the average rating of", row[2], "  ----  ", row[0])
+def tuples_to_json(tuple_list):
+    json = []
+    for row in tuple_list:
+        json.append(
+                {
+                    'director_name': row[0],
+                    'movie_count': row[1],
+                    'avg_rating': row[2]
+                }
+            )
+    return json
 
 
 if __name__ == "__main__":
