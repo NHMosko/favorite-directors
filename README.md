@@ -1,5 +1,6 @@
 # Favorite Directors
 A Python app for parsing IMDb ratings csv and generating a favorite director list, based on number of movies watched and average rating.
+
 _this is the backend counterpart to [favorite-directors-visualizer](github.com/nhmosko/favorite-directors-visualizer)_
 
 
@@ -7,7 +8,7 @@ _this is the backend counterpart to [favorite-directors-visualizer](github.com/n
 ### 1. Export your IMDb ratings
 Log in to imdb.com and navigate to your ratings page, then click on the export button on the top right corner (the export may take some time to complete).
 
-![imdb ratings page with circled export button](static/imdb-export.png)
+![imdb ratings page with circled export button](images/imdb-export.png)
 
 When the export is complete, you'll be able to download it as a file named something like e342343c(...).csv.
 
