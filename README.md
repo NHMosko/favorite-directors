@@ -1,7 +1,7 @@
 # Favorite Directors
 A Python app for parsing IMDb ratings csv and generating a favorite director list, based on number of movies watched and average rating.
 
-_This is the backend counterpart to [favorite-directors-visualizer](https://github.com/nhmosko/favorite-directors-visualizer)._
+_This is a deprecated version of [favorite-directors-visualizer](https://github.com/nhmosko/favorite-directors-visualizer)._
 
 
 ## 1. Export your IMDb ratings
@@ -26,9 +26,5 @@ If not set as `--only-print`, the app will generate a JSON file containing a lis
 
 _The generated list only takes into account directors who you have rated at least 3 titles from._
 
-## 3. Go to [nhmosko.github.io/favorite-directors-visualizer](https://nhmosko.github.io/favorite-directors-visualizer) 
-There you can interact with your data, change filters, play with parameters and create graphs.
-
-
 -----------------------
-*_Disclaimer: It doesn't work with Letterboxd exports, because their format does not include the name of the directors._
+*_Disclaimer: It doesn't work with Letterboxd exports, because their format does not include the name of the directors. The new one does._
